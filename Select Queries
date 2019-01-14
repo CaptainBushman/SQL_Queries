@@ -24,3 +24,10 @@ A customer wants to know the description of the movie "Outlaw Hanky".
 SELECT description FROM film
 WHERE title = 'Outlaw Hanky';
 
+Count the number of total payments the company has received:
+
+SELECT  COUNT(*) FROM payment;
+
+Count the number of different payments the company has received:
+
+SELECT  COUNT(DISTINCT amount) FROM payment;
