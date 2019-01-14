@@ -1,0 +1,26 @@
+Below are a few SQL queries related to a movie-rental shop. 
+
+What data do we have on customers?
+
+SELECT * FROM customer;
+
+
+Find the email of the customers named 'Nancy':
+
+SELECT email FROM customer
+WHERE first_name = 'Nancy';
+
+
+
+Find the email of the customer named Nancy Thomas
+
+
+SELECT email FROM customer
+WHERE first_name = 'Nancy' AND last_name = 'Thomas';
+
+
+A customer wants to know the description of the movie "Outlaw Hanky".
+
+SELECT description FROM film
+WHERE title = 'Outlaw Hanky';
+
