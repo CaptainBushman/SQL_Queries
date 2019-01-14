@@ -1,0 +1,61 @@
+Group By Clause:
+
+SELECT column_1, aggregate_function(column_2)
+FROM table_name
+GROUP BY column_1;
+
+What is the total $ each customer has spent?
+
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id;
+
+How much has each customer spent, and who spent the most?
+
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM (amount) DESC;
+
+
+How many films of each rating do we have?
+
+SELECT rating, COUNT(rating) FROM film
+GROUP BY rating;
+
+What is the quantity of each rental duration that we offer?
+
+SELECT rental_duration, COUNT(rental_duration)
+FROM film
+GROUP BY rental_duration;
+
+What are the rental rates of each rating of movie?
+
+SELECT rating, AVG(rental_rate)
+FROM film
+GROUP BY rating;
+
+There are two staff members with ID's 1 & 2. We want to give a bonus to the staff member that handled the most payments.
+How many payments did each member handle?
+How much was the total amount processed by each staff member?
+
+SELECT staff_id,COUNT(amount), SUM(amount)
+FROM payment
+GROUP BY staff_id;
+
+
+Corporate HQ is auditing the store. They want to know the average replacement cost of movies by rating.
+
+SELECT rating, AVG(replacement_cost)
+FROM film
+GROUP BY rating;
+
+
+We want to send coupons to the top 5 customers that have spent the most money.
+What are their ID numbers?
+
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+LIMIT 5;
