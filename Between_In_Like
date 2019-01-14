@@ -1,0 +1,73 @@
+Between statement:
+
+SEELCT column_1 FROM table_1
+WHERE column_1 BETWEEN low value AND high value;
+
+Select all customer payments that are between $8 and $9
+
+SELECT customer_id, amount FROM payment
+WHERE amount BETWEEN 8 AND 9;
+
+Select all customer payments that are not between $8 and $9
+
+SELECT customer_id, amount FROM payment
+WHERE amount NOT BETWEEN 8 AND 9;
+
+Select all of the customer payments that occured between February 7th, 2007 and February 15th, 2007
+
+SELECT amount, payment_date FROM payment
+WHERE payment_date BETWEEN '2007-02-07' AND '2007-02-15';
+
+
+IN Statement: 
+
+We need to see the Return Date and the Rental ID of all customers with the ID 7, 10 or 13.
+
+SELECT customer_id,rental_id,return_date
+FROM rental
+WHERE customer_id IN (7,13,10)
+ORDER BY return_date DESC;
+
+
+LIKE Statement:
+
+SELECT column_1, column_2
+FROM table_1
+WHERE column_1 LIKE 'X%';
+
+
+A manager needs to lookup a customer, but doesn't exaclty remember the name. He is pretty sure that it was something like "Jen".
+
+SELECT first_name, last_name
+FROM customer
+WHERE first_name LIKE 'Jen%';
+
+A manager needs to look up a customer, but only remembers that the name "ends with a 'y'".
+
+SELECT first_name,last_name
+FROM customer
+WHERE first_name LIKE '%y';
+
+Lookup any name that has the letter combination 'er' in the name.
+
+SELECT first_name,last_name
+FROM customer
+WHERE first_name LIKE '%er%';
+
+How many actors have first names that start with the letter P?
+
+SELECT COUNT(first_name) 
+FROM actor
+WHERE first_name LIKE 'P%';
+
+How many different districts are our customers from?
+
+SELECT COUNT(DISTINCT(district))
+FROM address;
+
+How many films have a rating of R and a replacement cost between $5 and $15?
+
+SELECT COUNT(*)
+FROM film
+WHERE rating ='R'
+AND replacement_cost BETWEEN 5 AND 15;
