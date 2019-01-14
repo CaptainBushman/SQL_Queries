@@ -1,0 +1,22 @@
+HAVING Syntax:
+
+SELECT column_1, aggregate_function(column_2)
+FROM table_name
+GROUP BY column_1
+HAVING condition;
+
+Corporate wants to know what customers are eligible for our platinum credit card.
+In order to qualify, the customer must have made at least 40 transaction payments.
+What customers (by customer ID) are eligible for the credit card?
+
+SELECT customer_id,COUNT(amount)
+FROM payment
+GROUP BY customer_id
+HAVING COUNT(amount) >=40;
+
+When grouped by rating, what movie ratings have an average rental duration of more than 5 days?
+
+SELECT rating, AVG(rental_duration)
+FROM film
+GROUP BY rating
+HAVING AVG(rental_duration) >5;
