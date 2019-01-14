@@ -1,0 +1,28 @@
+Order By Statement Ascending:
+
+SELECT column_1, column_2 
+FROM table_name
+ORDER BY column_1 ASC;
+
+Order By Statement Descending:
+
+SELECT column_1, column_2 
+FROM table_name
+ORDER BY column_1 DESC;
+
+
+View first and last names of customers in asceneding order of last names.
+
+SELECT first_name, last_name FROM customer
+ORDER BY last_name ASC; 
+
+View first and last names of customers in descending order of last names
+
+SELECT first_name, last_name FROM customer
+ORDER BY last_name DESC; 
+
+Display the customer ID of the top 10 highest payments:
+
+SELECT customer_id FROM payment
+ORDER BY amount DESC
+LIMIT 10;
